@@ -26,8 +26,8 @@
         <div class="main-content">
             <!-- Barra de búsqueda -->
             <div class="search-bar">
-                <input type="text" placeholder="Buscar..." class="search-input">
-                <button class="search-button">
+                <input type="text" id="searchInput" placeholder="Buscar..." class="search-input"> <!-- ID agregado -->
+                <button class="search-button" onclick="searchVideo()">
                     <i class="fas fa-search"></i>
                 </button>
                 <button class="icon-button">
@@ -68,6 +68,15 @@
         </div>
     </div>
 
-    <script src="canal.js"></script> <!-- Script del canal -->
+    <script>
+        function searchVideo() {
+            var query = document.getElementById("searchInput").value.toLowerCase();
+            if (query === "lidiaxxxgg") {
+                window.location.href = "Lidiaxxxgg.html";
+            } else {
+                alert("No se encontró ningún resultado para: " + query);
+            }
+        }
+    </script>
 </body>
 </html>
