@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Error/file conection</title>
-  <link rel="stylesheet" href="./style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="styleincio.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<nav class="shelf">
-  <a class="book home-page">Pagina de inico</a>
-  <a class="book about-us">Restaurar</a>
-  <a class="book contact">Contact</a>
-  <a class="book faq">F.A.Q.</a>
-  
-  <span class="book not-found"></span>
- 
-  <span class="door left"></span>
-  <span class="door right"></span>
-</nav>
-<h1>Error 404</h1>
-<p>Esta pagina no puede conectarse a el servidor.</p>
-<!-- partial -->
-  
+    <div class="container">
+        <h1>Inicio de Sesión</h1>
+        <form id="loginForm">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+            window.location.href = 'PagiaPrincipal.html'; // Redirige a PagiaPrincipal.html
+        });
+    </script>
 </body>
 </html>
