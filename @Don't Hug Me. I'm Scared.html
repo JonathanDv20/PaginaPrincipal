@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don't Hug Me. I'am Scared</title>
+    <title>Don't Hug Me. I'm Scared</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilo para la ventana flotante */
@@ -17,6 +17,21 @@
             border-radius: 5px;
             display: none;
             z-index: 1000;
+        }
+        
+        /* Estilo para el botón */
+        .follow-btn, .admin-btn {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .follow-btn:hover, .admin-btn:hover {
+            background-color: #187bcd;
         }
     </style>
 </head>
@@ -37,6 +52,8 @@
                     <div><strong>4</strong> seguidos</div>
                 </div>
                 <button class="follow-btn" id="followButton">Seguir</button>
+                <!-- Nuevo botón de entrar como admin -->
+                <button class="admin-btn" id="adminButton">Entrar como admin</button>
             </div>
         </header>
 
@@ -75,8 +92,13 @@
                 this.innerText = "Siguiendo"; // Cambia el texto del botón
                 showToast("Lo has seguido"); // Muestra el mensaje flotante
             } else {
-                showToast("Lo Has Seguido Correctamente /guradando informacion en el server (3.2KB)"); // Mensaje si ya alcanzó el máximo
+                showToast("Lo Has Seguido Correctamente /guardando información en el servidor (3.2KB)"); // Mensaje si ya alcanzó el máximo
             }
+        });
+
+        // Redirección al panel de admin
+        document.getElementById("adminButton").addEventListener("click", function() {
+            window.location.href = "paneldonthug.html"; // Redirige a paneldonthug.html
         });
 
         function showToast(message) {
